@@ -1,0 +1,44 @@
+bf16: true
+cutoff_len: 8192
+dataset: aitz_action_predict_ablation_1
+ddp_timeout: 180000000
+deepspeed: examples/deepspeed/ds_z3_config.json
+do_train: true
+eval_steps: 500
+eval_strategy: steps
+finetuning_type: full
+freeze_vision_tower: false
+gradient_accumulation_steps: 8
+learning_rate: 1.0e-05
+logging_steps: 10
+lr_scheduler_type: cosine
+model_name_or_path: /data3/trainedModels/qwen2vl-7b/full/uibert_grounding+query_summary_polished
+num_train_epochs: 3.0
+output_dir: /data3/trainedModels/qwen2vl-7b/full/uibert_grounding+query_summary_polished+aitz_ablation_1_sft
+overwrite_cache: true
+overwrite_output_dir: true
+per_device_eval_batch_size: 1
+per_device_train_batch_size: 2
+plot_loss: true
+preprocessing_num_workers: 128
+save_steps: 5000
+stage: sft
+template: qwen2_vl
+train_mm_proj_only: false
+val_size: 0.1
+warmup_ratio: 0.1
+
+# ablationYamls/qwen2vl_full_uibert_grounding+query_summary_polished+aitz_ablation_1_sft.yaml
+# /data1/wuzr/LLaMA-Factory/ablationYamls/qwen2vl_full_uibert_grounding+query_summary_polished+aitz_ablation_1_sft.yaml
+
+# echo "/bin/bash -c 'source /usr/local/miniconda3/bin/activate gui && cd /data1/wuzr/LLaMA-Factory/ && DISABLE_VERSION_CHECK=1 CUDA_VISIBLE_DEVICES=0,1,2,3 setsid llamafactory-cli train /data1/wuzr/LLaMA-Factory/ablationYamls/qwen2vl_full_uibert_grounding+query_summary_polished+aitz_ablation_1_sft.yaml > /data1/wuzr/LLaMA-Factory/ablationTrainingLogs/qwen2vl_full_uibert_grounding+query_summary_polished+aitz_ablation_1_sft.log 2>&1 &'" | at now + 110 minutes
+
+# echo "/bin/bash -c 'source /usr/local/miniconda3/bin/activate gui && cd /data1/wuzr/LLaMA-Factory/ && DISABLE_VERSION_CHECK=1 CUDA_VISIBLE_DEVICES=4,5,6,7 setsid llamafactory-cli train /data1/wuzr/LLaMA-Factory/ablationYamls/qwen2vl_full_uibert_grounding+query_summary_polished+aitz_ablation_2_sft.yaml > /data1/wuzr/LLaMA-Factory/ablationTrainingLogs/qwen2vl_full_uibert_grounding+query_summary_polished+aitz_ablation_2_sft.log 2>&1 &'" | at now + 110 minutes
+
+# echo "/bin/bash -c 'source /usr/local/miniconda3/bin/activate gui && cd /data1/wuzr/LLaMA-Factory/ && DISABLE_VERSION_CHECK=1 CUDA_VISIBLE_DEVICES=0,1,2,3 setsid llamafactory-cli train /data1/wuzr/LLaMA-Factory/ablationYamls/qwen2vl_full_uibert_grounding+query_summary_polished+aitz_ablation_3_sft.yaml > /data1/wuzr/LLaMA-Factory/ablationTrainingLogs/qwen2vl_full_uibert_grounding+query_summary_polished+aitz_ablation_3_sft.log 2>&1 &'" | at now + 250 minutes
+
+# echo "/bin/bash -c 'source /usr/local/miniconda3/bin/activate gui && cd /data1/wuzr/LLaMA-Factory/ && DISABLE_VERSION_CHECK=1 CUDA_VISIBLE_DEVICES=0,1,2,3 setsid llamafactory-cli train /data1/wuzr/LLaMA-Factory/ablationYamls/qwen2vl_full_uibert_grounding+query_summary_polished+aitz_ablation_4_sft.yaml > /data1/wuzr/LLaMA-Factory/ablationTrainingLogs/qwen2vl_full_uibert_grounding+query_summary_polished+aitz_ablation_4_sft.log 2>&1 &'" | at now + 250 minutes
+
+# echo "/bin/bash -c 'source /usr/local/miniconda3/bin/activate gui && cd /data1/wuzr/LLaMA-Factory/ && DISABLE_VERSION_CHECK=1 CUDA_VISIBLE_DEVICES=0,1,2,3 setsid llamafactory-cli train /data1/wuzr/LLaMA-Factory/ablationYamls/qwen2vl_full_uibert_grounding+query_summary_polished+aitz_ablation_5_sft.yaml > /data1/wuzr/LLaMA-Factory/ablationTrainingLogs/qwen2vl_full_uibert_grounding+query_summary_polished+aitz_ablation_5_sft.log 2>&1 &'" | at now + 390 minutes
+
+# echo "/bin/bash -c 'source /usr/local/miniconda3/bin/activate gui && cd /data1/wuzr/LLaMA-Factory/ && DISABLE_VERSION_CHECK=1 CUDA_VISIBLE_DEVICES=0,1,2,3 setsid llamafactory-cli train /data1/wuzr/LLaMA-Factory/ablationYamls/qwen2vl_full_uibert_grounding+query_summary_polished+aitz_ablation_6_sft.yaml > /data1/wuzr/LLaMA-Factory/ablationTrainingLogs/qwen2vl_full_uibert_grounding+query_summary_polished+aitz_ablation_6_sft.log 2>&1 &'" | at now + 390 minutes
