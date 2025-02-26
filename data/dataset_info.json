@@ -1,0 +1,212 @@
+{
+  "android_control_low_action_predict":{
+    "file_name":"./GUI/android_control_low_action_predict_train.json",
+    "formatting": "sharegpt",
+    "columns": {
+      "messages": "messages",
+      "images": "images"
+    },
+    "tags":{
+      "role_tag":"role",
+      "content_tag":"content",
+      "user_tag":"user",
+      "assistant_tag":"assistant"
+    }
+  },
+  "android_control_high_action_predict":{
+    "file_name":"./GUI/android_control_high_action_predict_train.json",
+    "formatting": "sharegpt",
+    "columns": {
+      "messages": "messages",
+      "images": "images"
+    },
+    "tags":{
+      "role_tag":"role",
+      "content_tag":"content",
+      "user_tag":"user",
+      "assistant_tag":"assistant"
+    }
+  },
+  "aitz_action_predict_ablation_1":{
+    "file_name":"./GUI/aitz_ablation_1_action_predict_train.json",
+    "formatting": "sharegpt",
+    "columns": {
+      "messages": "messages",
+      "images": "images"
+    },
+    "tags":{
+      "role_tag":"role",
+      "content_tag":"content",
+      "user_tag":"user",
+      "assistant_tag":"assistant"
+    }
+  },
+  "aitz_action_predict_ablation_2":{
+    "file_name":"./GUI/aitz_ablation_2_action_predict_train.json",
+    "formatting": "sharegpt",
+    "columns": {
+      "messages": "messages",
+      "images": "images"
+    },
+    "tags":{
+      "role_tag":"role",
+      "content_tag":"content",
+      "user_tag":"user",
+      "assistant_tag":"assistant"
+    }
+  },
+  "aitz_action_predict_ablation_3":{
+    "file_name":"./GUI/aitz_ablation_3_action_predict_train.json",
+    "formatting": "sharegpt",
+    "columns": {
+      "messages": "messages",
+      "images": "images"
+    },
+    "tags":{
+      "role_tag":"role",
+      "content_tag":"content",
+      "user_tag":"user",
+      "assistant_tag":"assistant"
+    }
+  },
+  "aitz_action_predict_ablation_4":{
+    "file_name":"./GUI/aitz_ablation_4_action_predict_train.json",
+    "formatting": "sharegpt",
+    "columns": {
+      "messages": "messages",
+      "images": "images"
+    },
+    "tags":{
+      "role_tag":"role",
+      "content_tag":"content",
+      "user_tag":"user",
+      "assistant_tag":"assistant"
+    }
+  },
+  "aitz_action_predict_ablation_5":{
+    "file_name":"./GUI/aitz_ablation_5_action_predict_train.json",
+    "formatting": "sharegpt",
+    "columns": {
+      "messages": "messages",
+      "images": "images"
+    },
+    "tags":{
+      "role_tag":"role",
+      "content_tag":"content",
+      "user_tag":"user",
+      "assistant_tag":"assistant"
+    }
+  },
+  "aitz_action_predict_ablation_6":{
+    "file_name":"./GUI/aitz_ablation_6_action_predict_train.json",
+    "formatting": "sharegpt",
+    "columns": {
+      "messages": "messages",
+      "images": "images"
+    },
+    "tags":{
+      "role_tag":"role",
+      "content_tag":"content",
+      "user_tag":"user",
+      "assistant_tag":"assistant"
+    }
+  },
+  "aitz_action_predict_ablation_7":{
+    "file_name":"./GUI/aitz_ablation_7_action_predict_train.json",
+    "formatting": "sharegpt",
+    "columns": {
+      "messages": "messages",
+      "images": "images"
+    },
+    "tags":{
+      "role_tag":"role",
+      "content_tag":"content",
+      "user_tag":"user",
+      "assistant_tag":"assistant"
+    }
+  },
+  "aitz_action_predict_ablation_8":{
+    "file_name":"./GUI/aitz_ablation_8_action_predict_train.json",
+    "formatting": "sharegpt",
+    "columns": {
+      "messages": "messages",
+      "images": "images"
+    },
+    "tags":{
+      "role_tag":"role",
+      "content_tag":"content",
+      "user_tag":"user",
+      "assistant_tag":"assistant"
+    }
+  },
+  "aitz_action_predict_ablation_9":{
+    "file_name":"./GUI/aitz_ablation_9_action_predict_train.json",
+    "formatting": "sharegpt",
+    "columns": {
+      "messages": "messages",
+      "images": "images"
+    },
+    "tags":{
+      "role_tag":"role",
+      "content_tag":"content",
+      "user_tag":"user",
+      "assistant_tag":"assistant"
+    }
+  },
+  "aitz_action_predict_ablation_10":{
+    "file_name":"./GUI/aitz_ablation_10_action_predict_train.json",
+    "formatting": "sharegpt",
+    "columns": {
+      "messages": "messages",
+      "images": "images"
+    },
+    "tags":{
+      "role_tag":"role",
+      "content_tag":"content",
+      "user_tag":"user",
+      "assistant_tag":"assistant"
+    }
+  },
+  "uibert_query_summary_polished":{
+    "file_name":"./GUI/uibert_query_summary_polished_preprocessed_train.json",
+    "formatting": "sharegpt",
+    "columns": {
+      "messages": "messages",
+      "images": "images"
+    },
+    "tags":{
+      "role_tag":"role",
+      "content_tag":"content",
+      "user_tag":"user",
+      "assistant_tag":"assistant"
+    }
+  },
+  "uibert_grounding+query_summary_polished":{
+    "file_name":"./GUI/uibert_grounding+query_summary_polished_preprocessed_train.json",
+    "formatting": "sharegpt",
+    "columns": {
+      "messages": "messages",
+      "images": "images"
+    },
+    "tags":{
+      "role_tag":"role",
+      "content_tag":"content",
+      "user_tag":"user",
+      "assistant_tag":"assistant"
+    }
+  },
+  "uibert_grounding_polished":{
+    "file_name":"./GUI/uibert_grounding_polished_preprocessed_train.json",
+    "formatting": "sharegpt",
+    "columns": {
+      "messages": "messages",
+      "images": "images"
+    },
+    "tags":{
+      "role_tag":"role",
+      "content_tag":"content",
+      "user_tag":"user",
+      "assistant_tag":"assistant"
+    }
+  }
+}
