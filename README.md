@@ -115,7 +115,7 @@ python evaluate.py \
     --log [the path to save the result record] \
     --modelPath [the path to the fine-tuned transformer model for reasoning]
 ```
-For the detailed implementation of the evaluation, refer to [./evalEvalAgentAction.py](./evalEvalAgentAction.py).
+For the detailed implementation of the evaluation, refer to [./eval/EvalAgentAction.py](./eval/EvalAgentAction.py).
 
 # Acknowledgement
 This work can not be done without the help of the following repos:
