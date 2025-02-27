@@ -20,34 +20,35 @@ We propose a pivot task name **query inference** to smooth coordinate-oriented g
 
 
 ## 🆙 Updates
-* [x] We release the code for data preprocess, query refinement, and evaluation.
-* [x] We release the training data in sharegpt format.
+* [x] We have released the code for data preprocessing, query refinement, and evaluation.
+* [x] We have released the training data in sharegpt format.
 
 ## Dependencies
-- The training for grounding, query inference, and reasoning is based on [LLaMA-Factory](https://github.com/hiyouga/LLaMA-Factory), refer the LLaMA-Factory repo for training environment installation. 
-- After setting up LLaMA-Factory for training, you can install other requirements by:
+- The training for grounding, query inference, and reasoning is based on [LLaMA-Factory](https://github.com/hiyouga/LLaMA-Factory). Please refer to the LLaMA-Factory repo for installation instructions for the training environment.
+- After setting up LLaMA-Factory for training, install additional requirements by running:
 ```bash
     pip3 install -r requirements.txt
 ```
 
 ## Training Data
-- We release the json training data in LLaMA-Factory-supported shargpt format in [./data/], please unzip [./data/GUI.zip](./data/GUI.zip) by the following command to obtain the json data along with [dataset_info.json](./data/dataset_info.json) for LLaMA-Factory training. UIBERT for query inference is also provided in [./data/GUI/uibert_query_summary_polished_preprocessed_train.json](./data/GUI/uibert_query_summary_polished_preprocessed_train.json)
+- We have released the JSON training data in LLaMA-Factory-supported sharegpt format, along with [dataset_info.json](./data/dataset_info.json) for LLaMA-Factory training in the [./data/] directory. Please unzip [./data/GUI.zip](./data/GUI.zip) using the following commands to obtain the JSON data. The UIBERT dataset for query inference is also provided in [./data/GUI/uibert_query_summary_polished_preprocessed_train.json](./data/GUI/uibert_query_summary_polished_preprocessed_train.json)
 ```bash
     zip -s 0 GUI.zip --out combined.zip
     unzip combined.zip
 ```
 - The original datasets can be downloaded as follows:
-  - **UIBERT**: UIBERT is a subset of the [OS-Atlas](https://hf-mirror.com/datasets/OS-Copilot/OS-Atlas-data) grounding dataset. Refering the above link for downloading.
-  - **AITZ**: [AITZ](https://github.com/IMNearth/CoAT) is a mobile agent dataset derived from a subset of AITW and annotated by proprietary MLLMs for CoAT components. Refering the above link for downloading.
-  - **AndroidControl**: [AndroidControl](https://github.com/google-research/google-research/tree/master/android_control) is a mobile agent dataset comprising 15,283 demonstrations with step-wise instructions. Refering the above link for downloading the tf record file and extracting the image file.
-- After downloading the original datasets, adjust the file folder structure:
-  - **UIBERT**: Moving all images to [./GUIData/UIBert/screenshots](./GUIData/UIBert/screenshots).
-  - **AITZ**: Moving all images to [./GUIData/android_in_the_zoo/train/images](./GUIData/android_in_the_zoo/train/images) and [./GUIData/android_in_the_zoo/test/images](./GUIData/android_in_the_zoo/test/images) accroding to the original split setting.
-  - **AndroidControl**: Moving the original dataset to [./GUIData/android_control_parsed](./GUIData/android_control_parsed) and run the following command for processing.
+  - **UIBERT**: UIBERT is a subset of the [OS-Atlas](https://hf-mirror.com/datasets/OS-Copilot/OS-Atlas-data) grounding dataset. Refer to the above link for downloading.
+  - **AITZ**: [AITZ](https://github.com/IMNearth/CoAT) is a mobile agent dataset derived from a subset of AITW and annotated by proprietary MLLMs for CoAT components. Refer to the above link for downloading.
+  - **AndroidControl**: [AndroidControl](https://github.com/google-research/google-research/tree/master/android_control) is a mobile agent dataset comprising 15,283 demonstrations with step-by-step instructions. Refer to the above link for downloading the TFRecord file and extracting the image files.
+  
+- After downloading the original datasets, adjust the folder structure as follows:
+  - **UIBERT**: Move all images to [./GUIData/UIBert/screenshots](./GUIData/UIBert/screenshots).
+  - **AITZ**: Move all images to [./GUIData/android_in_the_zoo/train/images](./GUIData/android_in_the_zoo/train/images) and [./GUIData/android_in_the_zoo/test/images](./GUIData/android_in_the_zoo/test/images) according to the original split setting.
+  - **AndroidControl**: Move the original dataset to [./GUIData/android_control_parsed](./GUIData/android_control_parsed) and run the following command for processing.
 ```bash
     python mergeAndroidControl.py
 ```
-- After adjusting, the file folder structure should be:
+- After adjusting the folder structure, it should look like this:
 ```
 .
 └── GUIData
@@ -84,17 +85,17 @@ We propose a pivot task name **query inference** to smooth coordinate-oriented g
 </div>
 
 
-We provide the code implementation for constructing UIBERT for query inference. Detailed process are provided as follows:
+We provide the code implementation for constructing UIBERT for query inference. The detailed process is as follows:
 
-1. Prepare the original UIBERT dataset and adjust file folder structure as mentioned above.
-2. Configuring API key for **Qwen-VL-Max** in [refineQuery.py](refineQuery.py):
+1. Prepare the original UIBERT dataset and adjust the folder structure as mentioned above.
+2. Configure the API key for **Qwen-VL-Max** in [refineQuery.py](refineQuery.py):
 ```python
 client = OpenAI(
     api_key="your key", 
     base_url="https://dashscope.aliyuncs.com/compatible-mode/v1",
 )
 ```
-3. Run `python refineQuery.py` for constructing.
+3. Run `python refineQuery.py` to construct the refined dataset.
 
 Example triplets $\langle s, q_r, c \rangle$ from the refined UIBERT dataset, along with the original query $q$ are provided as follows:
 <div align="center">
@@ -109,16 +110,18 @@ After acquiring the fine-tuned model for reasoning, configure and run `evaluate.
 Detailed arguments setting:
 ```bash
 python evaluate.py \
-    [--type:acactioneval for AndroidControl and aitzablationactioneval for AITZ] \
-    [--testJsonPath: the test split dataset json path] \
-    [--log: the result record path] \
-    [--modelPath: the transformer model path for fine-tuned reasoning model] \
+    --type [acactioneval for AndroidControl, aitzablationactioneval for AITZ] \
+    --testJsonPath [the path to the test split JSON dataset] \
+    --log [the path to save the result record] \
+    --modelPath [the path to the fine-tuned transformer model for reasoning]
 ```
+For the detailed implementation of the evaluation, refer to [./evalEvalAgentAction.py](./evalEvalAgentAction.py).
+
 # Acknowledgement
 This work can not be done without the help of the following repos:
-
-
 - LLaMA-Factory: [https://github.com/hiyouga/LLaMA-Factory](https://github.com/hiyouga/LLaMA-Factory)
+- flash-attn: [https://github.com/Dao-AILab/flash-attention](https://github.com/Dao-AILab/flash-attention)
+
 
 <!-- # Citation
 
