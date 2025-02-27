@@ -1,10 +1,10 @@
 import json, os, shutil
 from tqdm import tqdm
 
-dataRootPath = "./GUIdata/android_control_parsed/"
-jsonPath = "./GUIdata/android_control/jsons"
-imagePath = "./GUIdata/android_control/images"
-layoutPath = "./GUIdata/android_control/layouts"
+dataRootPath = "./GUIData/android_control_parsed/"
+jsonPath = "./GUIData/android_control/jsons"
+imagePath = "./GUIData/android_control/images"
+layoutPath = "./GUIData/android_control/layouts"
 
 for path in [jsonPath, imagePath, layoutPath]:
     os.makedirs(path, exist_ok=True)
