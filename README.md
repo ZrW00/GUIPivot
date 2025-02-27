@@ -95,7 +95,7 @@ client = OpenAI(
     base_url="https://dashscope.aliyuncs.com/compatible-mode/v1",
 )
 ```
-3. Run `python refineQuery.py` to construct the refined dataset.
+3. Run `python refineQuery.py` to construct the refined dataset. The results will be saved at [./data/GUI/uibert_query_summary_polished_preprocessed.json](./data/GUI/uibert_query_summary_polished_preprocessed.json). 
 
 Example triplets $\langle s, q_r, c \rangle$ from the refined UIBERT dataset, along with the original query $q$ are provided as follows:
 <div align="center">
@@ -103,6 +103,12 @@ Example triplets $\langle s, q_r, c \rangle$ from the refined UIBERT dataset, al
       <img src="./doc_images/uibertSamples.png">
   </a>
 </div>
+
+## Construct JSON Datasets in Sharegpt Format
+- For constructing AITZ, run `python preprocessAITZActionPredictAblations.py`. The results will be saved at `./data/GUI/aitz_ablation_[1-10]_action_predict_test.json` and `./data/GUI/aitz_ablation_[1-10]_action_predict_train.json`. For the meaning of the ID in the filenames, please refer to our paper.
+- For constructing AndroidControl, run `python preprocessAndroidControlActionPredictHigh.py` and `python preprocessAndroidControlActionPredictLow.py`. The results will be saved at `./data/GUI/android_control_[high/low]_action_predict_test.json` and `./data/GUI/android_control_[high/low]_action_predict_train.json`. 
+
+All JSON datasets ending in `train` will be used for training, and those ending in `test` will be used for evaluation.
 
 ## Evaluation
 After acquiring the fine-tuned model for reasoning, configure and run `evaluate.py` to obtain the evaluation results on two mobile agnet benchmarks.
