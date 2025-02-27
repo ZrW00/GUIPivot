@@ -12,7 +12,6 @@ from rouge import Rouge
 from typing import *
 import copy
 
-X, Y = 1920, 1080
 
 
 def androidControlActionJudge(rawPredictAction:str, rawGroundTruthAction:str, layoutPath:str, width:int=1080, height:int=2400):
