@@ -2,9 +2,9 @@
 
 <div align="center">
   <h2 align="center">Smoothing Grounding and Reasoning for MLLM-Powered GUI Agents with Query-Oriented Pivot Tasks</h2>
-  <!-- <a href="https://arxiv.org/abs/2412.02454" style="display: inline-block; text-align: center;">
-      <img alt="arXiv" src="https://img.shields.io/badge/arXiv-2412.02454-b31b1b.svg?style=flat">
-  </a> -->
+  <a href="https://arxiv.org/abs/2503.00401" style="display: inline-block; text-align: center;">
+      <img alt="arXiv" src="https://img.shields.io/badge/arXiv-2503.00401-b31b1b.svg?style=flat">
+  </a>
 </div>
 
 **This repository is the code implementation of our paper:**
@@ -129,11 +129,13 @@ This work can not be done without the help of the following repos:
 - flash-attn: [https://github.com/Dao-AILab/flash-attention](https://github.com/Dao-AILab/flash-attention)
 
 
-<!-- # Citation
+# Citation
 
 ```ruby
-@atricle{wu2025guipivot,
-  title   = {Smoothing Grounding and Reasoning for MLLM-Powered GUI Agents with Query-Oriented Pivot Tasks},
-  year    = {2025}
+@article{wu2025smoothing,
+  title={Smoothing Grounding and Reasoning for MLLM-Powered GUI Agents with Query-Oriented Pivot Tasks},
+  author={Wu, Zongru and Cheng, Pengzhou and Wu, Zheng and Ju, Tianjie and Zhang, Zhuosheng and Liu, Gongshen},
+  journal={arXiv preprint arXiv:2503.00401},
+  year={2025}
 }
-``` -->
+```
