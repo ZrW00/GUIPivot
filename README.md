@@ -1,4 +1,4 @@
-# GUIPivot.Private
+# GUIPivot
 
 <div align="center">
   <h2 align="center">Smoothing Grounding and Reasoning for MLLM-Powered GUI Agents with Query-Oriented Pivot Tasks</h2>
